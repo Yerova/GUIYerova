@@ -1,8 +1,9 @@
 package main;
 
 import java.awt.Color;
-import java.awt.Font;
+
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -12,10 +13,21 @@ public class UsefulGUI {
 	JFrame frame;	
 	JPanel panel;
 	JLabel label;
+	JButton button;
+	
+	public JButton buttonCreator(String text, int r, int g, int b, int x, int y, int height, int width) {
+		button = new JButton();
+		button.setBounds(x, y, height, width);
+		button.setText(text);
+		button.setBackground(new Color(r, g, b));
+		button.setFocusable(false);
+		
+		return button;
+	}
 	
 	public JLabel labelCreator(int r, int g, int b, int x, int y, int height, int width) {
 		label = new JLabel();
-		label.setForeground(new Color(r, g, b));
+		label.setBackground(new Color(r, g, b));
 		label.setBounds(x, y, height, width);
 		
 		return label;
